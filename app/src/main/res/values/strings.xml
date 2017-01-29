@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FragmentVisibilityWithViewPager</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_page">First</string>
+    <string name="second_page">Second</string>
+    <string name="content_second_fragment">2</string>
+    <string name="content_first_fragment">1</string>
+    <string name="open_text">Open</string>
+</resources>
