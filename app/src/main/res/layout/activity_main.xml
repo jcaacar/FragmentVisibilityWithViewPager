@@ -12,10 +12,11 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="@string/app_name"
-        app:titleTextColor="@android:color/white"
+        app:title="@string/activity_main_title"
+        android:minHeight="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize" />
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/sliding_tabs"
@@ -29,24 +30,12 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9"/>
+        android:layout_weight="7"/>
 
-    <RelativeLayout
+    <com.example.jcaac.fragmentvisibilitywithviewpager.android.components.FragmentStateFooter
+        android:id="@+id/fragment_state_footer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="20dp">
-
-        <Button
-            android:id="@+id/button_open_new_activity"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:text="@string/open_text" />
-
-    </RelativeLayout>
+        android:layout_weight="3" />
 
 </LinearLayout>

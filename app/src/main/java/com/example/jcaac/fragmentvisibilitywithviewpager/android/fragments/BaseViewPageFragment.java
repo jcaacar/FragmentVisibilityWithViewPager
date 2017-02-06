@@ -2,9 +2,10 @@ package com.example.jcaac.fragmentvisibilitywithviewpager.android.fragments;
 
 import android.support.v4.app.Fragment;
 
-public abstract class BaseViewPageFragment extends Fragment {
+import com.example.jcaac.fragmentvisibilitywithviewpager.android.models.FragmentState;
+import org.greenrobot.eventbus.EventBus;
 
-    protected final String TAG = this.getClass().getSimpleName();
+public abstract class BaseViewPageFragment extends Fragment {
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
@@ -34,7 +35,11 @@ public abstract class BaseViewPageFragment extends Fragment {
         }
     }
 
-    protected abstract void onVisible();
+    protected void onVisible() {
+        EventBus.getDefault().post(new FragmentState(this, FragmentState.State.VISIBLE));
+    }
 
-    protected abstract void onHidden();
+    protected void onHidden() {
+        EventBus.getDefault().post(new FragmentState(this, FragmentState.State.HIDDEN));
+    }
 }
